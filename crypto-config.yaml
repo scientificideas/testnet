@@ -7,24 +7,14 @@ PeerOrgs:
       - Hostname: orderer1
       - Hostname: orderer2
       - Hostname: orderer3
-      - Hostname: orderer4
-      - Hostname: orderer5
-      - Hostname: orderer6
-      - Hostname: orderer7
-      - Hostname: orderer8
-      - Hostname: orderer9
-      - Hostname: orderer10
-      - Hostname: peer0
-      - Hostname: peer1
     Users:
-      Count: 10
+      Count: 2
 
   - Name: Org2
     Domain: org2.scientificideas.org
     EnableNodeOUs: true
     Specs:
       - Hostname: orderer0
-      - Hostname: peer0
     Users:
       Count: 1
 
@@ -33,7 +23,6 @@ PeerOrgs:
     EnableNodeOUs: true
     Specs:
       - Hostname: orderer0
-      - Hostname: peer0
     Users:
       Count: 1
 
@@ -42,6 +31,5 @@ PeerOrgs:
     EnableNodeOUs: true
     Specs:
       - Hostname: orderer0
-      - Hostname: peer0
     Users:
       Count: 1
