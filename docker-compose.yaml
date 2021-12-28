@@ -27,9 +27,9 @@ networks:
 services:
   orderer0.org1.scientificideas.org:
     container_name: orderer0.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -40,7 +40,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -67,9 +67,9 @@ services:
 
   orderer1.org1.scientificideas.org:
     container_name: orderer1.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -80,7 +80,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -107,9 +107,9 @@ services:
 
   orderer2.org1.scientificideas.org:
     container_name: orderer2.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -120,7 +120,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -147,9 +147,9 @@ services:
 
   orderer3.org1.scientificideas.org:
     container_name: orderer3.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -160,7 +160,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -187,9 +187,9 @@ services:
 
   orderer4.org1.scientificideas.org:
     container_name: orderer4.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -200,7 +200,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -227,9 +227,9 @@ services:
 
   orderer5.org1.scientificideas.org:
     container_name: orderer5.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -240,7 +240,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -267,9 +267,9 @@ services:
 
   orderer6.org1.scientificideas.org:
     container_name: orderer6.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -280,7 +280,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -307,9 +307,9 @@ services:
 
   orderer7.org1.scientificideas.org:
     container_name: orderer7.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -320,7 +320,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -347,9 +347,9 @@ services:
 
   orderer8.org1.scientificideas.org:
     container_name: orderer8.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -360,7 +360,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -387,9 +387,9 @@ services:
 
   orderer9.org1.scientificideas.org:
     container_name: orderer9.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -400,7 +400,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -427,9 +427,9 @@ services:
 
   orderer10.org1.scientificideas.org:
     container_name: orderer10.org1.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -440,7 +440,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -467,9 +467,9 @@ services:
 
   orderer0.org2.scientificideas.org:
     container_name: orderer0.org2.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -480,7 +480,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -507,9 +507,9 @@ services:
 
   orderer0.org3.scientificideas.org:
     container_name: orderer0.org3.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -520,7 +520,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -547,9 +547,9 @@ services:
 
   orderer0.org4.scientificideas.org:
     container_name: orderer0.org4.scientificideas.org
-    image: scientificideas/fabric-orderer:2.3-bft-73a2382b2a2256711c76ac26bf95872d1b864739
+    image: hyperledger/fabric-orderer:latest
     environment:
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
@@ -560,7 +560,7 @@ services:
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+      - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=false
       - ORDERER_GENERAL_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
       - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
@@ -587,7 +587,7 @@ services:
 
   peer0.org1.scientificideas.org:
     container_name: peer0.org1.scientificideas.org
-    image: scientificideas/fabric-peer:2.3-bft-05c0e06b0a3bf9aada039c0fb1b83ae315287241
+    image: hyperledger/fabric-peer:latest
     environment:
       - CORE_PEER_ID=peer0.org1.scientificideas.org
       - CORE_PEER_ADDRESS=peer0.org1.scientificideas.org:7051
@@ -602,7 +602,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=org1_net
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_CHAINCODE_BUILDER=hyperledger/fabric-ccenv:1.4.7
       - CORE_LEDGER_HISTORY_ENABLEHISTORYDATABASE=false
       - CORE_VM_DOCKER_ATTACHSTDOUT=true
@@ -613,7 +613,7 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=false
       - CORE_PEER_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
       - CORE_METRICS_PROVIDER=prometheus
@@ -637,7 +637,7 @@ services:
 
   peer1.org1.scientificideas.org:
     container_name: peer1.org1.scientificideas.org
-    image: scientificideas/fabric-peer:2.3-bft-05c0e06b0a3bf9aada039c0fb1b83ae315287241
+    image: hyperledger/fabric-peer:latest
     environment:
       - CORE_PEER_ID=peer1.org1.scientificideas.org
       - CORE_PEER_ADDRESS=peer1.org1.scientificideas.org:7051
@@ -652,7 +652,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=org1_net
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_CHAINCODE_BUILDER=hyperledger/fabric-ccenv:1.4.7
       - CORE_LEDGER_HISTORY_ENABLEHISTORYDATABASE=false
       - CORE_VM_DOCKER_ATTACHSTDOUT=true
@@ -663,7 +663,7 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=false
       - CORE_PEER_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
       - CORE_METRICS_PROVIDER=prometheus
@@ -687,7 +687,7 @@ services:
 
   peer0.org2.scientificideas.org:
     container_name: peer0.org2.scientificideas.org
-    image: scientificideas/fabric-peer:2.3-bft-05c0e06b0a3bf9aada039c0fb1b83ae315287241
+    image: hyperledger/fabric-peer:latest
     environment:
       - CORE_PEER_ID=peer0.org2.scientificideas.org
       - CORE_PEER_ADDRESS=peer0.org2.scientificideas.org:7051
@@ -702,7 +702,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=org1_net
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_CHAINCODE_BUILDER=hyperledger/fabric-ccenv:1.4.7
       - CORE_LEDGER_HISTORY_ENABLEHISTORYDATABASE=false
       - CORE_VM_DOCKER_ATTACHSTDOUT=true
@@ -713,7 +713,7 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=false
       - CORE_PEER_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
       - CORE_METRICS_PROVIDER=prometheus
@@ -737,7 +737,7 @@ services:
 
   peer0.org3.scientificideas.org:
     container_name: peer0.org3.scientificideas.org
-    image: scientificideas/fabric-peer:2.3-bft-05c0e06b0a3bf9aada039c0fb1b83ae315287241
+    image: hyperledger/fabric-peer:latest
     environment:
       - CORE_PEER_ID=peer0.org3.scientificideas.org
       - CORE_PEER_ADDRESS=peer0.org3.scientificideas.org:7051
@@ -752,7 +752,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=org1_net
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_CHAINCODE_BUILDER=hyperledger/fabric-ccenv:1.4.7
       - CORE_LEDGER_HISTORY_ENABLEHISTORYDATABASE=false
       - CORE_VM_DOCKER_ATTACHSTDOUT=true
@@ -763,7 +763,7 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=false
       - CORE_PEER_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
       - CORE_METRICS_PROVIDER=prometheus
@@ -787,7 +787,7 @@ services:
 
   peer0.org4.scientificideas.org:
     container_name: peer0.org4.scientificideas.org
-    image: scientificideas/fabric-peer:2.3-bft-05c0e06b0a3bf9aada039c0fb1b83ae315287241
+    image: hyperledger/fabric-peer:latest
     environment:
       - CORE_PEER_ID=peer0.org4.scientificideas.org
       - CORE_PEER_ADDRESS=peer0.org4.scientificideas.org:7051
@@ -802,7 +802,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=org1_net
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_CHAINCODE_BUILDER=hyperledger/fabric-ccenv:1.4.7
       - CORE_LEDGER_HISTORY_ENABLEHISTORYDATABASE=false
       - CORE_VM_DOCKER_ATTACHSTDOUT=true
@@ -813,7 +813,7 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=false
       - CORE_PEER_TLS_CLIENTROOTCAS=[/var/hyperledger/tlsca/tlsca.org1.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org2.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org3.scientificideas.org-cert.pem, /var/hyperledger/tlsca/tlsca.org4.scientificideas.org-cert.pem]
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9443
       - CORE_METRICS_PROVIDER=prometheus
@@ -837,14 +837,14 @@ services:
 
   cli:
     container_name: cli
-    image: scientificideas/fabric-tools:2.3-bft-pkcs11-f4ba807f4ca14fd18ceef946b4ca3c643f6c273e
+    image: hyperledger/fabric-tools:latest
     tty: true
     stdin_open: true
     environment:
       - SYS_CHANNEL=system
       - GOPATH=/opt/gopath
       #- CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - FABRIC_LOGGING_SPEC=${HLF_LOG_LEVEL:-DEBUG}
+      - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_PEER_ID=cli
       - CORE_PEER_ADDRESS=peer0.org1.scientificideas.org:7051
       - CORE_PEER_LOCALMSPID=org1MSP
