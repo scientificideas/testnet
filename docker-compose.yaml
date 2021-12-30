@@ -22,8 +22,8 @@ services:
     command: orderer
     volumes:
         - ./genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer0.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer0.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
     networks:
       - net
     ports:
@@ -42,8 +42,8 @@ services:
     command: orderer
     volumes:
         - ./genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer1.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer1.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer1.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer1.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
     networks:
       - net
     ports:
@@ -62,8 +62,8 @@ services:
     command: orderer
     volumes:
         - ./genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer2.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer2.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer2.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer2.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
     networks:
       - net
     ports:
@@ -82,8 +82,8 @@ services:
     command: orderer
     volumes:
         - ./genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer3.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
-        - ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer3.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer3.org1.scientificideas.org/msp:/var/hyperledger/orderer/msp
+        - ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer3.org1.scientificideas.org/tls/:/var/hyperledger/orderer/tls
     networks:
       - net
     ports:
@@ -101,17 +101,17 @@ services:
       #- CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - FABRIC_LOGGING_SPEC=orderer.consensus.smartbft=debug:grpc=debug
       - CORE_PEER_ID=cli
-      - CORE_PEER_ADDRESS=peer0.org1.scientificideas.org:7051
+      - CORE_PEER_ADDRESS=orderer0.org1.scientificideas.org:7051
       - CORE_PEER_LOCALMSPID=org1MSP
       - CORE_PEER_TLS_ENABLED=true
-      - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.scientificideas.org/peers/peer0.org1.scientificideas.org/tls/server.crt
-      - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.scientificideas.org/peers/peer0.org1.scientificideas.org/tls/server.key
-      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.scientificideas.org/peers/peer0.org1.scientificideas.org/tls/ca.crt
-      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.scientificideas.org/users/Admin@org1.scientificideas.org/msp
-    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+      - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/orderer/crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/orderer/crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/orderer/crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/orderer/crypto/ordererOrganizations/org1.scientificideas.org/users/Admin@org1.scientificideas.org/msp
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
     command: /bin/bash
     volumes:
-        - ./crypto:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto
-        - ./:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
+        - ./crypto:/opt/gopath/src/github.com/hyperledger/fabric/orderer/crypto
+        - ./:/opt/gopath/src/github.com/hyperledger/fabric/orderer/config
     networks:
       - net

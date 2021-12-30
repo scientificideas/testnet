@@ -2,7 +2,7 @@ Organizations:
 - &org1
   Name: org1MSP
   ID: org1MSP
-  MSPDir: ./crypto/peerOrganizations/org1.scientificideas.org/msp
+  MSPDir: ./crypto/ordererOrganizations/org1.scientificideas.org/msp
   Policies: &org1MSPPolicies
     Readers:
       Type: Signature
@@ -13,9 +13,6 @@ Organizations:
     Admins:
       Type: Signature
       Rule: "OR('org1MSP.admin')"
-  AnchorPeers:
-    - Host: peer0.org1.scientificideas.org
-      Port: 7051
   OrdererEndpoints:
   - orderer0.org1.scientificideas.org:7050
   - orderer1.org1.scientificideas.org:7050
@@ -75,33 +72,33 @@ Profiles:
           RequestMaxBytes: 512000
           RequestPoolSubmitTimeout: 5s
         Consenters:
-        - Host: orderer1.org1.scientificideas.org
+        - Host: orderer0.org1.scientificideas.org
           Port: 7050
-          ClientTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer0.org1.scientificideas.org/tls/server.crt
-          ServerTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer0.org1.scientificideas.org/tls/server.crt
+          ClientTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/server.crt
+          ServerTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/tls/server.crt
           MSPID: org1MSP
-          Identity: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer0.org1.scientificideas.org/msp/signcerts/orderer0.org1.scientificideas.org-cert.pem
+          Identity: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer0.org1.scientificideas.org/msp/signcerts/orderer0.org1.scientificideas.org-cert.pem
           ConsenterId: 1
         - Host: orderer1.org1.scientificideas.org
           Port: 7050
-          ClientTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer1.org1.scientificideas.org/tls/server.crt
-          ServerTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer1.org1.scientificideas.org/tls/server.crt
+          ClientTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer1.org1.scientificideas.org/tls/server.crt
+          ServerTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer1.org1.scientificideas.org/tls/server.crt
           MSPID: org1MSP
-          Identity: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer1.org1.scientificideas.org/msp/signcerts/orderer1.org1.scientificideas.org-cert.pem
+          Identity: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer1.org1.scientificideas.org/msp/signcerts/orderer1.org1.scientificideas.org-cert.pem
           ConsenterId: 2
         - Host: orderer2.org1.scientificideas.org
           Port: 7050
-          ClientTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer2.org1.scientificideas.org/tls/server.crt
-          ServerTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer2.org1.scientificideas.org/tls/server.crt
+          ClientTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer2.org1.scientificideas.org/tls/server.crt
+          ServerTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer2.org1.scientificideas.org/tls/server.crt
           MSPID: org1MSP
-          Identity: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer2.org1.scientificideas.org/msp/signcerts/orderer2.org1.scientificideas.org-cert.pem
+          Identity: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer2.org1.scientificideas.org/msp/signcerts/orderer2.org1.scientificideas.org-cert.pem
           ConsenterId: 3
         - Host: orderer3.org1.scientificideas.org
           Port: 7050
-          ClientTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer3.org1.scientificideas.org/tls/server.crt
-          ServerTLSCert: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer3.org1.scientificideas.org/tls/server.crt
+          ClientTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer3.org1.scientificideas.org/tls/server.crt
+          ServerTLSCert: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer3.org1.scientificideas.org/tls/server.crt
           MSPID: org1MSP
-          Identity: ./crypto/peerOrganizations/org1.scientificideas.org/peers/orderer3.org1.scientificideas.org/msp/signcerts/orderer3.org1.scientificideas.org-cert.pem
+          Identity: ./crypto/ordererOrganizations/org1.scientificideas.org/orderers/orderer3.org1.scientificideas.org/msp/signcerts/orderer3.org1.scientificideas.org-cert.pem
           ConsenterId: 4
       Organizations:
       - *org1
